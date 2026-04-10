@@ -1,9 +1,11 @@
 [Trabalho 1 - Listas - Turma II.pdf](https://github.com/user-attachments/files/26617786/Trabalho.1.-.Listas.-.Turma.II.pdf)
+
 Deve ser implementado:
 
  TAD de Lista Encadeada (2,0 pontos) com as seguintes operações:
+
 o Inicializar lista;
-o Inserir na lista (no final da lista e ordenado por expoente do polinômio);
+  o Inserir na lista (no final da lista e ordenado por expoente do polinômio);
 o Remover monômio da lista (de acordo com o expoente do polinômio);
 o Descobrir expoente: receber um expoente e determinar se o termo existe ou
 não no polinômio;
