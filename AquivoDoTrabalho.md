@@ -1,5 +1,6 @@
 [Trabalho 1 - Listas - Turma II.pdf](https://github.com/user-attachments/files/26617786/Trabalho.1.-.Listas.-.Turma.II.pdf)
 Deve ser implementado:
+
  TAD de Lista Encadeada (2,0 pontos) com as seguintes operações:
 o Inicializar lista;
 o Inserir na lista (no final da lista e ordenado por expoente do polinômio);
