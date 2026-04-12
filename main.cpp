@@ -17,7 +17,8 @@ void inserirTermos(Polinomio &p)
 
     cout << "Coeficiente: ";
     cin >> c;
-    cout << "Expoente: ";
+    
+    cout << "Expoente: "; 
     cin >> e;
 
     inserirOrdenado(p, c, e);
@@ -47,6 +48,7 @@ int main()
         cout << "0 - Sair\n";
         cout << "------------\n";
         cout << "\nOpcao: ";
+       
         cin >> opcao;
 
         switch (opcao)
@@ -101,7 +103,9 @@ int main()
         {
             double k;
             cout << "Digite o escalar: ";
+            
             cin >> k;
+            
             resultado = multiplicarEscalar(p1, k);
             imprimir(&resultado);
             break;
@@ -111,17 +115,23 @@ int main()
         {
             double x;
             cout << "Digite o valor de x: ";
+            
             cin >> x;
+            
             cout << "Resultado: " << valorNumerico(p1, x) << endl;
             break;
         }
 
         case 0:
+            
             cout << "Fim\n";
+            
             break;
 
         default:
+            
             cout << "Opcao invalida!\n";
+        
         }
 
     } while (opcao != 0);
