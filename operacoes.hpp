@@ -68,13 +68,13 @@ Polinomio subtrair(Polinomio &p1, Polinomio &p2)
             t2 = t2->prox;
         }
 
-        if(t1->expoente > t2->expoente)
+        else if(t1->expoente > t2->expoente)
         {
             inserirOrdenado(p3, -t1->coeficiente, t1->expoente);
             t1 = t1->prox;
         }
 
-        if(t2->expoente > t1->expoente)
+        else if(t2->expoente > t1->expoente)
         {
             inserirOrdenado(p3, -t2->coeficiente, t2->expoente);
             t2 = t2->prox;
@@ -99,7 +99,7 @@ Polinomio multiplicarEscalar(Polinomio &p, double k)
     Polinomio resultado;
     inicializar(resultado);
 
-    while(atual->prox != nullptr)
+    while(atual != nullptr)
     {
         inserirOrdenado(resultado, atual->coeficiente * k, atual->expoente);
         atual = atual->prox;
@@ -110,9 +110,9 @@ Polinomio multiplicarEscalar(Polinomio &p, double k)
 double valorNumerico(Polinomio &p, double x)
 {
     Termo* atual = p.primeiro;
-    double resultado;
+    double resultado = 0;
 
-    while(atual->prox != nullptr)
+    while(atual != nullptr)
     {
         resultado += atual->coeficiente * potencia(x, atual->expoente);
         atual = atual->prox;
