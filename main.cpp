@@ -10,20 +10,6 @@
 
 using namespace std;
 
-void inserirTermos(Polinomio &p)
-{
-    double c;
-    int e;
-
-    cout << "Coeficiente: ";
-    cin >> c;
-    
-    cout << "Expoente: "; 
-    cin >> e;
-
-    inserirOrdenado(p, c, e);
-}
-
 int main()
 {
     Polinomio p1, p2, resultado;
@@ -33,18 +19,25 @@ int main()
 
     int opcao;
 
+    double c;
+    int e;
+
     do
     {
         cout << "\n---- MENU ----\n";
         cout << "1 - Inserir termo no P1\n";
         cout << "2 - Inserir termo no P2\n";
-        cout << "3 - Mostrar P1\n";
-        cout << "4 - Mostrar P2\n";
-        cout << "5 - Somar (P1 + P2)\n";
-        cout << "6 - Subtrair (P1 - P2)\n";
-        cout << "7 - Multiplicar (P1 * P2)\n";
-        cout << "8 - Multiplicar P1 por um escalar\n";
-        cout << "9 - Valor numerico de P1\n";
+        cout << "3 - Inserir no final do P1\n";
+        cout << "4 - Inserir no final do P2\n";
+        cout << "5 - Mostrar P1\n";
+        cout << "6 - Mostrar P2\n";
+        cout << "7 - Somar (P1 + P2)\n";
+        cout << "8 - Subtrair (P1 - P2)\n";
+        cout << "9 - Multiplicar (P1 * P2)\n";
+        cout << "10 - Multiplicar P1 por um escalar\n";
+        cout << "11 - Multiplicar P2 por um escalar\n";
+        cout << "12 - Valor numerico de P1\n";
+        cout << "13 - Valor numerico de P2\n";
         cout << "0 - Sair\n";
         cout << "------------\n";
         cout << "\nOpcao: ";
@@ -54,28 +47,56 @@ int main()
         switch (opcao)
         {
         case 1:
-            inserirTermos(p1);
+            cout << "Coeficiente: ";
+            cin >> c;
+            cout << "Expoente: "; 
+            cin >> e;
+
+            inserirOrdenado(p1, c, e);
             break;
 
         case 2:
-            inserirTermos(p2);
+            cout << "Coeficiente: ";
+            cin >> c;
+            cout << "Expoente: "; 
+            cin >> e;
+
+            inserirOrdenado(p2, c, e);
             break;
 
         case 3:
+            cout << "Coeficiente: ";
+            cin >> c;
+            cout << "Expoente: "; 
+            cin >> e;
+
+            inserirFinal(p1, c, e);
+            break;
+
+        case 4:
+            cout << "Coeficiente: ";
+            cin >> c;
+            cout << "Expoente: "; 
+            cin >> e;
+
+            inserirFinal(p2, c, e);
+            break;
+
+        case 5:
 
             cout << "P1 = ";
 
             imprimir(&p1);
             break;
 
-        case 4:
+        case 6:
 
             cout << "P2 = ";
 
             imprimir(&p2);
             break;
 
-        case 5:
+        case 7:
             resultado = somar(p1, p2);
 
             cout << "Resultado: ";
@@ -83,7 +104,7 @@ int main()
             imprimir(&resultado);
             break;
 
-        case 6:
+        case 8:
             resultado = subtrair(p1, p2);
 
             cout << "Resultado: ";
@@ -91,7 +112,7 @@ int main()
             imprimir(&resultado);
             break;
 
-        case 7:
+        case 9:
             resultado = multiplicar(p1, p2);
 
             cout << "Resultado: ";
@@ -99,7 +120,7 @@ int main()
             imprimir(&resultado);
             break;
 
-        case 8:
+        case 10:
         {
             double k;
             cout << "Digite o escalar: ";
@@ -111,7 +132,17 @@ int main()
             break;
         }
 
-        case 9:
+        case 11:
+        {
+            double k;
+            cout << "Digite o escalar: ";
+            cin >> k;
+            resultado = multiplicarEscalar(p2, k);
+            imprimir(&resultado);
+            break;
+        }
+
+        case 12:
         {
             double x;
             cout << "Digite o valor de x: ";
@@ -119,6 +150,17 @@ int main()
             cin >> x;
             
             cout << "Resultado: " << valorNumerico(p1, x) << endl;
+            break;
+        }
+
+        case 13:
+        {
+            double x;
+            cout << "Digite o valor de x: ";
+            
+            cin >> x;
+
+            cout << "Resultado: " << valorNumerico(p2, x) << endl;
             break;
         }
 
