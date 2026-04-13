@@ -2,12 +2,6 @@
 #include "polinomio.hpp"
 #include "operacoes.hpp"
 
-// Polinomio somar(Polinomio &p1, Polinomio &p2);
-// Polinomio subtrair(Polinomio &p1, Polinomio &p2);
-// Polinomio multiplicar(Polinomio &p1, Polinomio &p2);
-// Polinomio multiplicarEscalar(Polinomio &p, double k);
-// double valorNumerico(Polinomio &p, double x);
-
 using namespace std;
 
 int main()
